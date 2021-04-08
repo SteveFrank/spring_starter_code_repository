@@ -13,7 +13,14 @@ public class UserInfo {
     private Integer age;
     private String address;
 
+    public UserInfo(String code, String info) {
+        this.code = code;
+        this.info = info;
+    }
+
     public UserInfo(String name, Integer age, String address) {
+        this.code = "0000";
+        this.info = "success";
         this.name = name;
         this.age = age;
         this.address = address;

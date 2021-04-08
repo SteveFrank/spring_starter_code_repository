@@ -5,5 +5,5 @@ server:
 middleware:
   config:
     whitelist:
-      users: 2245776255,1234567890,abcdefg
+      users: 2245776255,1234567890,abcdefg,aaa
 

@@ -1,5 +1,6 @@
 package com.middleware.whitelist.config;
 
+import com.middleware.whitelist.DoJoinPoint;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -15,16 +16,17 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(WhiteListProperties.class)
 public class WhiteListAutoConfigure {
 
-    /**
-     * 在当前上下文不存在某个对象的时候，才会实例化一个Bean
-     * @param properties
-     * @return
-     */
-    @Bean(name = "whiteListConfig")
+    @Bean("whiteListConfig")
     @ConditionalOnMissingBean
     public String whiteListConfig(WhiteListProperties properties) {
-
         return properties.getUsers();
     }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public DoJoinPoint point(){
+        return new DoJoinPoint();
+    }
+
 
 }

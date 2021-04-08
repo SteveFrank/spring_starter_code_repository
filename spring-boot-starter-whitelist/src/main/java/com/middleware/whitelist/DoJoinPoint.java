@@ -11,7 +11,6 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Method;
@@ -21,12 +20,11 @@ import java.lang.reflect.Method;
  * @date 2021/4/6
  */
 @Aspect
-@Component
 public class DoJoinPoint {
 
     private static final Logger LOG = LoggerFactory.getLogger(DoJoinPoint.class);
 
-    @Resource(name = "whiteListConfig")
+    @Resource
     private String whiteListConfig;
 
     @Pointcut("@annotation(com.middleware.whitelist.annotation.DoWhiteList)")
@@ -36,6 +34,7 @@ public class DoJoinPoint {
 
     @Around("aopPoint()")
     public Object doRouter(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        LOG.info("doRouter proceedingJoinPoint");
         // 获取对应的内容
         Method method = getMethod(proceedingJoinPoint);
         LOG.info("method is : {}", method.getName());
@@ -57,6 +56,7 @@ public class DoJoinPoint {
                 return proceedingJoinPoint.proceed();
             }
         }
+        LOG.info("white list not passed!");
 
         // 拦截
         return returnObject(whiteList, method);
