@@ -1,0 +1,9 @@
+server:
+  port: 8081
+
+# 白名单用户配置
+middleware:
+  config:
+    whitelist:
+      users: 2245776255,1234567890,abcdefg
+
