@@ -1,2 +1,4 @@
 .idea
 target
+spring-boot-starter-hystrix/spring-boot-starter-hystrix.iml
+spring-boot-starter-hystrix-test/spring-boot-starter-hystrix-test.iml

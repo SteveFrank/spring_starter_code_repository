@@ -12,6 +12,8 @@
     <modules>
         <module>spring-boot-starter-whitelist</module>
         <module>spring-boot-starter-whitelist-test</module>
+        <module>spring-boot-starter-hystrix</module>
+        <module>spring-boot-starter-hystrix-test</module>
     </modules>
 
     <properties>
@@ -48,6 +50,13 @@
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring.boot.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.netflix.hystrix</groupId>
+                <artifactId>hystrix-core</artifactId>
+                <version>1.5.9</version>
+            </dependency>
+
             <dependency>
                 <groupId>commons-beanutils</groupId>
                 <artifactId>commons-beanutils</artifactId>
