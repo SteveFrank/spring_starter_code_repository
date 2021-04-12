@@ -1,8 +1,8 @@
-package com.middleware.hystrix;
+package com.middleware.ratelimiter;
 
-import com.middleware.hystrix.annotation.DoHystrix;
-import com.middleware.hystrix.service.IValveService;
-import com.middleware.hystrix.service.impl.HystrixValveImpl;
+import com.middleware.ratelimiter.annotation.DoRateLimiter;
+import com.middleware.ratelimiter.service.IValueService;
+import com.middleware.ratelimiter.service.impl.RateLimiterValveImpl;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
@@ -14,21 +14,20 @@ import java.lang.reflect.Method;
 
 /**
  * @author yangqian
- * @date 2021/4/9
+ * @date 2021/4/12
  */
 @Aspect
-public class DoHystrixPoint {
+public class DoRateLimiterPoint {
 
-    @Pointcut("@annotation(com.middleware.hystrix.annotation.DoHystrix)")
+    @Pointcut("@annotation(com.middleware.ratelimiter.annotation.DoRateLimiter)")
     public void aopPoint() {
 
     }
 
-    @Around("aopPoint() && @annotation(doGovern)")
-    public Object doRouter(ProceedingJoinPoint joinPoint, DoHystrix doGovern) throws Throwable {
-        // 此处会有线程不安全的问题，正式代码中需要注意调整
-        IValveService valveService = new HystrixValveImpl();
-        return valveService.access(joinPoint, getMethod(joinPoint), doGovern, joinPoint.getArgs());
+    @Around("aopPoint() && @annotation(doRateLimiter)")
+    public Object doRouter(ProceedingJoinPoint joinPoint, DoRateLimiter doRateLimiter) throws Throwable {
+        IValueService valueService = new RateLimiterValveImpl();
+        return valueService.access(joinPoint, getMethod(joinPoint), doRateLimiter, joinPoint.getArgs());
     }
 
     private Method getMethod(ProceedingJoinPoint joinPoint) throws NoSuchMethodException {
