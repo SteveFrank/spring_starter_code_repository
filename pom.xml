@@ -16,6 +16,8 @@
         <module>spring-boot-starter-hystrix-test</module>
         <module>spring-boot-starter-ratelimiter</module>
         <module>spring-boot-starter-ratelimiter-test</module>
+        <module>spring-boot-starter-methodtext</module>
+        <module>spring-boot-starter-methodtext-test</module>
     </modules>
 
     <properties>
