@@ -5,5 +5,5 @@ spring-boot-starter-hystrix-test/spring-boot-starter-hystrix-test.iml
 spring-boot-starter-ratelimiter/spring-boot-starter-ratelimiter.iml
 spring-boot-starter-ratelimiter-test/spring-boot-starter-ratelimiter-test.iml
 spring-boot-starter-methodtext/spring-boot-starter-methodtext.iml
-
+smart-mybatis-core/smart-mybatis-core.iml
 
