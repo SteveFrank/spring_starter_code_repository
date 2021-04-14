@@ -17,6 +17,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ *
+ * 读取XML配置创建datasource等操作
+ *
+ * build(构建实例化元素)
+ * parseConfiguration(解析配置)
+ * dataSource(获取数据库配置)
+ * connection(Map datasource) (链接数据库)
+ * mapperElement(解析SQL语句)
+ *
  * @author yangqian
  * @date 2021/4/13
  */
@@ -63,6 +72,9 @@ public class SqlSessionFactoryBuilder {
     private Connection connection(Map<String, String> dataSource) {
         try {
             Class.forName(dataSource.get("driver"));
+            System.out.println(dataSource.get("url"));
+            System.out.println(dataSource.get("username"));
+            System.out.println(dataSource.get("password"));
             return DriverManager.getConnection(dataSource.get("url"), dataSource.get("username"), dataSource.get("password"));
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();

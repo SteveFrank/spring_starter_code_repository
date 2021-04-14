@@ -69,7 +69,18 @@ public class DefaultSqlSession implements SqlSession {
     }
 
     @Override
-    public <T> List<T> selectList(String statement, Object paramter) {
+    public <T> List<T> selectList(String statement, Object parameter) {
+        XNode xNode = mapperElement.get(statement);
+        Map<Integer, String> parameterMap = xNode.getParameter();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(xNode.getSql());
+            buildParameter(preparedStatement, parameter, parameterMap);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            // 转换resultSet的结果
+            return resultSet2Obj(resultSet, Class.forName(xNode.getResultType()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
@@ -126,6 +137,7 @@ public class DefaultSqlSession implements SqlSession {
             String parameterDefine = parameterMap.get(i);
             Object obj = fieldMap.get(parameterDefine);
 
+            // 解析各个类型
             if (obj instanceof Short) {
                 preparedStatement.setShort(i, Short.parseShort(obj.toString()));
                 continue;
@@ -164,6 +176,7 @@ public class DefaultSqlSession implements SqlSession {
                 for (int i = 1; i <= columnCount; i++) {
                     Object value = resultSet.getObject(i);
                     String columnName = metaData.getColumnName(i);
+                    // 设置值数据
                     String setMethod = "set" + columnName.substring(0, 1).toUpperCase() + columnName.substring(1);
                     Method method;
                     if (value instanceof Timestamp) {

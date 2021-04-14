@@ -13,11 +13,25 @@ public interface SqlSession {
 
     <T> T selectOne(String statement);
 
+    /**
+     * 带有入参的单条数据查询
+     * @param statement
+     * @param parameter
+     * @param <T>
+     * @return
+     */
     <T> T selectOne(String statement, Object parameter);
 
     <T> List<T> selectList(String statement);
 
-    <T> List<T> selectList(String statement, Object paramter);
+    /**
+     * 带有入参的多条数据查询
+     * @param statement
+     * @param parameter
+     * @param <T>
+     * @return
+     */
+    <T> List<T> selectList(String statement, Object parameter);
 
     void close();
 
