@@ -19,6 +19,7 @@
         <module>spring-boot-starter-methodtext</module>
         <module>spring-boot-starter-methodtext-test</module>
         <module>smart-mybatis-core</module>
+        <module>smart-mybatis-core-spring</module>
     </modules>
 
     <properties>
