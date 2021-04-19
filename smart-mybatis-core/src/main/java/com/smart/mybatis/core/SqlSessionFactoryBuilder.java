@@ -31,6 +31,11 @@ import java.util.regex.Pattern;
  */
 public class SqlSessionFactoryBuilder {
 
+    /**
+     * 后续在spring-boot组件中结合的时候需要进行修改
+     * @param reader
+     * @return
+     */
     public DefaultSqlSessionFactory build(Reader reader) {
         SAXReader saxReader = new SAXReader();
         try {

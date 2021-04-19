@@ -20,6 +20,8 @@
         <module>spring-boot-starter-methodtext-test</module>
         <module>smart-mybatis-core</module>
         <module>smart-mybatis-core-spring</module>
+        <module>spring-boot-starter-smart-mybatis</module>
+        <module>spring-boot-starter-smart-mybatis-test</module>
     </modules>
 
     <properties>
