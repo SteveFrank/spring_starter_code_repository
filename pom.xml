@@ -22,6 +22,7 @@
         <module>smart-mybatis-core-spring</module>
         <module>spring-boot-starter-smart-mybatis</module>
         <module>spring-boot-starter-smart-mybatis-test</module>
+        <module>x-pack-sql-jdbc</module>
     </modules>
 
     <properties>
@@ -74,12 +75,19 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.19</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis</artifactId>
                 <version>3.5.6</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch -->
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>7.10.2</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>com.google.guava</groupId>
