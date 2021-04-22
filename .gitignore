@@ -10,3 +10,4 @@ smart-mybatis-core-spring/smart-mybatis-core-spring.iml
 spring-boot-starter-smart-mybatis/spring-boot-starter-smart-mybatis.iml
 spring-boot-starter-smart-mybatis-test/spring-boot-starter-smart-mybatis-test.iml
 x-pack-sql-jdbc/x-pack-sql-jdbc.iml
+smart-rpc-spring-boot-starter/smart-rpc-spring-boot-starter.iml
