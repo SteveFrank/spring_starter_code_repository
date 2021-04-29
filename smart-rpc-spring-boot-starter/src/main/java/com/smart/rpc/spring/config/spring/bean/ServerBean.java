@@ -19,6 +19,5 @@ public class ServerBean extends ServerConfig implements ApplicationContextAware 
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         // 启动注册中心
         logger.info("启动注册中心 ... ...");
-
     }
 }
