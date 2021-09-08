@@ -9,6 +9,11 @@
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
 
+    <modules>
+        <module>starter_common_lib</module>
+        <module>starter_common_lib_example</module>
+    </modules>
+
     <properties>
         <java.version>1.8</java.version>
         <resource.delimiter>@</resource.delimiter>
