@@ -29,5 +29,9 @@ public class UserController {
         return new UserInfo("虫虫:" + userId, 19, "天津市东丽区万科赏溪苑14-0000");
     }
 
+    public static void main(String[] args) {
+        System.out.println("标题abc".length());
+    }
+
 
 }
