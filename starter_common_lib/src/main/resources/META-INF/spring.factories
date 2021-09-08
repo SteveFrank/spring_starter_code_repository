@@ -1,1 +1,3 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.starter.common.lib.config.WhiteListAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.starter.common.lib.config.WhiteListAutoConfiguration,\
+  com.starter.common.lib.config.EsIBatisAutoConfiguration

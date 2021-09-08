@@ -5,3 +5,8 @@ server:
 check:
   whitelist:
     users: aaa,bbb,ccc,ddd,eee,fff
+
+es-ibatis:
+  address: jdbc:es://http://127.0.0.1:9200
+  base-package: com.starter.common.lib.example.dao
+  mappers: mapper/Student_Mapper.xml
