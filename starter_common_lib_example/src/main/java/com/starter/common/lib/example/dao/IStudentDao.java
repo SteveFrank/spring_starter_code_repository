@@ -8,6 +8,6 @@ import com.starter.common.lib.example.domain.Student;
  */
 public interface IStudentDao {
 
-    Student queryStudentById(Long id);
+    Student queryStudentByName(String name);
 
 }

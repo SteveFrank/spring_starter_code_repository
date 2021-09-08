@@ -8,9 +8,9 @@ public class Student {
 
     private String id;
     private String name;
-    private String nickName;
+    private String nickname;
     private String sex;
-    private int age;
+    private Long age;
 
     public String getId() {
         return id;
@@ -28,12 +28,12 @@ public class Student {
         this.name = name;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public String getSex() {
@@ -44,11 +44,11 @@ public class Student {
         this.sex = sex;
     }
 
-    public int getAge() {
+    public Long getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Long age) {
         this.age = age;
     }
 }

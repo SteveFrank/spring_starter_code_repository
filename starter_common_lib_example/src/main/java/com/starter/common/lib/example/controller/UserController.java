@@ -39,7 +39,7 @@ public class UserController {
 
     @RequestMapping(path = "/api/queryUserInfoById", method = RequestMethod.GET)
     public Student queryUserInfoById(){
-        return studentDao.queryStudentById(1001L);
+        return studentDao.queryStudentByName("zhangsan");
     }
 
 }

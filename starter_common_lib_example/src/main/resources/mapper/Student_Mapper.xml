@@ -2,10 +2,9 @@
 
 <mapper namespace="com.starter.common.lib.example.dao.IStudentDao">
 
-    <select id="queryStudentById" parameterType="java.lang.Long" resultType="com.starter.common.lib.example.domain.Student">
-        SELECT id, name, nickname, sex, age
+    <select id="queryStudentByName" parameterType="java.lang.String" resultType="com.starter.common.lib.example.domain.Student">
+        SELECT name, nickname, sex, age
         FROM student
-        where id = #{id}
     </select>
 
 </mapper>
